@@ -1,0 +1,19 @@
+class Solution {
+    public int maxCount(int m, int n, int[][] ops) {
+        if (ops.length == 0) {
+            return m * n;
+        }
+        int heightMin = Integer.MAX_VALUE;
+        int widthMin = Integer.MAX_VALUE;
+        
+        for (int[] square : ops) {
+            if (square[0] < heightMin) {
+                heightMin = square[0];
+            }
+            if (square[1] < widthMin) {
+                widthMin = square[1];
+            }
+        }
+        return heightMin * widthMin;
+    }
+}
